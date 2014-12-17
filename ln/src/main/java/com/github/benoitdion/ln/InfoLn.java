@@ -1,8 +1,8 @@
-package com.benoitdion.ln;
+package com.github.benoitdion.ln;
 
 import android.util.*;
 
-public class ReleaseLn extends BaseLn {
+public class InfoLn extends BaseLn {
     @Override
     public void v(Throwable throwable) {
         clearExtra();
@@ -35,47 +35,47 @@ public class ReleaseLn extends BaseLn {
 
     @Override
     public void i(Throwable throwable) {
-        clearExtra();
+        println(Log.INFO, false, throwable, null);
     }
 
     @Override
     public void i(Throwable throwable, String message, Object... args) {
-        clearExtra();
+        println(Log.INFO, false, throwable, message, args);
     }
 
     @Override
     public void i(String message, Object... args) {
-        clearExtra();
+        println(Log.INFO, false, null, message, args);
     }
 
     @Override
     public void w(Throwable throwable) {
-        clearExtra();
+        println(Log.WARN, true, throwable, null);
     }
 
     @Override
     public void w(Throwable throwable, String message, Object... args) {
-        clearExtra();
+        println(Log.WARN, true, throwable, message, args);
     }
 
     @Override
     public void w(String message, Object... args) {
-        clearExtra();
+        println(Log.WARN, true, null, message, args);
     }
 
     @Override
     public void w(boolean report, Throwable throwable) {
-        clearExtra();
+        println(Log.WARN, report, throwable, null);
     }
 
     @Override
     public void w(boolean report, Throwable throwable, String message, Object... args) {
-        clearExtra();
+        println(Log.WARN, report, throwable, message, args);
     }
 
     @Override
     public void w(boolean report, String message, Object... args) {
-        clearExtra();
+        println(Log.WARN, report, null, message, args);
     }
 
     @Override

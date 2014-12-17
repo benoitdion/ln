@@ -1,4 +1,4 @@
-package com.benoitdion.ln;
+package com.github.benoitdion.ln;
 
 import android.text.*;
 import android.util.*;

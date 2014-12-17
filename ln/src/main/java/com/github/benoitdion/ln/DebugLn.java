@@ -1,36 +1,36 @@
-package com.benoitdion.ln;
+package com.github.benoitdion.ln;
 
-import android.util.*;
+import android.util.Log;
 
-public class InfoLn extends BaseLn {
+public class DebugLn extends BaseLn {
     @Override
     public void v(Throwable throwable) {
-        clearExtra();
+        println(Log.VERBOSE, false, throwable, null);
     }
 
     @Override
     public void v(String message, Object... args) {
-        clearExtra();
+        println(Log.VERBOSE, false, null, message, args);
     }
 
     @Override
     public void v(Throwable throwable, String message, Object... args) {
-        clearExtra();
+        println(Log.VERBOSE, false, throwable, message, args);
     }
 
     @Override
     public void d(Throwable throwable) {
-        clearExtra();
+        println(Log.DEBUG, false, throwable, null);
     }
 
     @Override
     public void d(String message, Object... args) {
-        clearExtra();
+        println(Log.DEBUG, false, null, message, args);
     }
 
     @Override
     public void d(Throwable throwable, String message, Object... args) {
-        clearExtra();
+        println(Log.DEBUG, false, throwable, message, args);
     }
 
     @Override
@@ -110,11 +110,17 @@ public class InfoLn extends BaseLn {
 
     @Override
     public boolean isDebugEnabled() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isVerboseEnabled() {
-        return false;
+        return true;
+    }
+
+    @Override
+    protected String formatMessage(String message) {
+        message = String.format("%s  %s", Thread.currentThread().getName(), message);
+        return message;
     }
 }

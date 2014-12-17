@@ -1,8 +1,9 @@
-package com.benoitdion.ln.example;
+package com.github.benoitdion.ln.example;
 
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import com.benoitdion.ln.*;
+import android.support.v7.app.ActionBarActivity;
+import com.github.benoitdion.ln.Ln;
+import com.github.benoitdion.ln.NaturalLog;
 
 public class MainActivity extends ActionBarActivity {
 

@@ -1,8 +1,10 @@
-package com.benoitdion.ln.example;
+package com.github.benoitdion.ln.example;
 
-import android.app.*;
-import android.content.pm.*;
-import com.benoitdion.ln.*;
+import android.app.Application;
+import android.content.pm.ApplicationInfo;
+import com.github.benoitdion.ln.DebugLn;
+import com.github.benoitdion.ln.Ln;
+import com.github.benoitdion.ln.ReleaseLn;
 
 public class LnExampleApplication extends Application {
     @Override

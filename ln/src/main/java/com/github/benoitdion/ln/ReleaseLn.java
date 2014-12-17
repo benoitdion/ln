@@ -1,81 +1,81 @@
-package com.benoitdion.ln;
+package com.github.benoitdion.ln;
 
-import android.util.Log;
+import android.util.*;
 
-public class DebugLn extends BaseLn {
+public class ReleaseLn extends BaseLn {
     @Override
     public void v(Throwable throwable) {
-        println(Log.VERBOSE, false, throwable, null);
+        clearExtra();
     }
 
     @Override
     public void v(String message, Object... args) {
-        println(Log.VERBOSE, false, null, message, args);
+        clearExtra();
     }
 
     @Override
     public void v(Throwable throwable, String message, Object... args) {
-        println(Log.VERBOSE, false, throwable, message, args);
+        clearExtra();
     }
 
     @Override
     public void d(Throwable throwable) {
-        println(Log.DEBUG, false, throwable, null);
+        clearExtra();
     }
 
     @Override
     public void d(String message, Object... args) {
-        println(Log.DEBUG, false, null, message, args);
+        clearExtra();
     }
 
     @Override
     public void d(Throwable throwable, String message, Object... args) {
-        println(Log.DEBUG, false, throwable, message, args);
+        clearExtra();
     }
 
     @Override
     public void i(Throwable throwable) {
-        println(Log.INFO, false, throwable, null);
+        clearExtra();
     }
 
     @Override
     public void i(Throwable throwable, String message, Object... args) {
-        println(Log.INFO, false, throwable, message, args);
+        clearExtra();
     }
 
     @Override
     public void i(String message, Object... args) {
-        println(Log.INFO, false, null, message, args);
+        clearExtra();
     }
 
     @Override
     public void w(Throwable throwable) {
-        println(Log.WARN, true, throwable, null);
+        clearExtra();
     }
 
     @Override
     public void w(Throwable throwable, String message, Object... args) {
-        println(Log.WARN, true, throwable, message, args);
+        clearExtra();
     }
 
     @Override
     public void w(String message, Object... args) {
-        println(Log.WARN, true, null, message, args);
+        clearExtra();
     }
 
     @Override
     public void w(boolean report, Throwable throwable) {
-        println(Log.WARN, report, throwable, null);
+        clearExtra();
     }
 
     @Override
     public void w(boolean report, Throwable throwable, String message, Object... args) {
-        println(Log.WARN, report, throwable, message, args);
+        clearExtra();
     }
 
     @Override
     public void w(boolean report, String message, Object... args) {
-        println(Log.WARN, report, null, message, args);
+        clearExtra();
     }
 
     @Override
@@ -110,17 +110,11 @@ public class DebugLn extends BaseLn {
 
     @Override
     public boolean isDebugEnabled() {
-        return true;
+        return false;
     }
 
     @Override
     public boolean isVerboseEnabled() {
-        return true;
-    }
-
-    @Override
-    protected String formatMessage(String message) {
-        message = String.format("%s  %s", Thread.currentThread().getName(), message);
-        return message;
+        return false;
     }
 }

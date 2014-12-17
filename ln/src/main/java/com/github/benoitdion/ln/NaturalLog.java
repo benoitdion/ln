@@ -1,4 +1,4 @@
-package com.benoitdion.ln;
+package com.github.benoitdion.ln;
 
 public interface NaturalLog {
     void v(Throwable throwable);

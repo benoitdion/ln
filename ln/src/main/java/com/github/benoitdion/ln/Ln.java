@@ -1,4 +1,4 @@
-package com.benoitdion.ln;
+package com.github.benoitdion.ln;
 
 public class Ln {
     private static NaturalLog ln;
