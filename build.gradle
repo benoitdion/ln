@@ -14,18 +14,3 @@ allprojects {
         mavenCentral()
     }
 }
-
-apply plugin: 'maven'
-
-group = 'com.github.benoitdion.ln'
-version = '0.1'
-
-uploadArchives {
-    repositories {
-        mavenDeployer {
-            repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
-                authentication(userName: sonatypeUsername, password: sonatypePassword)
-            }
-        }
-    }
-}
