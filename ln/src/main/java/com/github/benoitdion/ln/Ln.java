@@ -1,7 +1,7 @@
 package com.github.benoitdion.ln;
 
 public class Ln {
-    private static NaturalLog ln;
+    private static NaturalLog ln = new ReleaseLn();
 
     private Ln() {
     }
