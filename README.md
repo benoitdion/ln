@@ -1,5 +1,7 @@
 Ln
 ==
+[![Build Status](https://travis-ci.org/benoitdion/ln.svg?branch=master)](https://travis-ci.org/benoitdion/ln)
+
 A simple Android logging facade inspired by Roboguice Ln
 
 
