@@ -3,6 +3,11 @@ apply plugin: 'com.android.library'
 android {
     compileSdkVersion 21
     buildToolsVersion "21.1.2"
+
+    lintOptions {
+        abortOnError true
+        warningsAsErrors true
+    }
 }
 
 apply from: 'https://raw.github.com/chrisbanes/gradle-mvn-push/master/gradle-mvn-push.gradle'

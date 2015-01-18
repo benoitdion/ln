@@ -16,9 +16,15 @@ android {
             minifyEnabled false
         }
     }
+
+    lintOptions {
+        abortOnError true
+        warningsAsErrors true
+        disable 'IconMissingDensityFolder'
+    }
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:21.+'
+    compile 'com.android.support:appcompat-v7:21.0.3'
     compile project(':ln')
 }
