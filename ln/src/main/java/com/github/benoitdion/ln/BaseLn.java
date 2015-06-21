@@ -4,9 +4,9 @@ import android.text.*;
 import android.util.*;
 
 public abstract class BaseLn implements NaturalLog {
-    private static final ThreadLocal<String> TAG = new ThreadLocal<String>();
-    private static final ThreadLocal<Ln.Context> CONTEXT = new ThreadLocal<Ln.Context>();
-    private static final ThreadLocal<Integer> DEPTH = new ThreadLocal<Integer>();
+    private static final ThreadLocal<String> TAG = new ThreadLocal<>();
+    private static final ThreadLocal<Ln.Context> CONTEXT = new ThreadLocal<>();
+    private static final ThreadLocal<Integer> DEPTH = new ThreadLocal<>();
 
     protected void println(int priority, boolean report, Throwable throwable, String message, Object... args) {
         message = args.length == 0 ? message : String.format(message, args);
@@ -30,15 +30,19 @@ public abstract class BaseLn implements NaturalLog {
             CONTEXT.remove();
             String contextString = context.get();
             if (contextString != null) {
-                Log.println(priority, getTag(), contextString + " " + formatMessage(message));
+                log(priority, getTag(), contextString + " " + formatMessage(message));
                 return;
             }
         }
-        Log.println(priority, getTag(), formatMessage(message));
+        log(priority, getTag(), formatMessage(message));
     }
 
     protected String formatMessage(String message) {
         return message;
+    }
+
+    protected void log(int priority, String tag, String message) {
+        Log.println(priority, tag, message);
     }
 
     @Override
