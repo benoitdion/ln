@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 22
-    buildToolsVersion "22.0.1"
+    compileSdkVersion androidVersions.compileSdkVersion
+    buildToolsVersion androidVersions.buildToolsVersion
 
     defaultConfig {
         applicationId "com.github.benoitdion.ln.example"
-        minSdkVersion 8
-        targetSdkVersion 22
+        minSdkVersion androidVersions.minSdkVersion
+        targetSdkVersion androidVersions.targetSdkVersion
         versionCode 1
         versionName "0.1"
     }
@@ -20,11 +20,10 @@ android {
     lintOptions {
         abortOnError true
         warningsAsErrors true
-        disable 'IconMissingDensityFolder'
     }
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:22.2.0'
+    compile 'com.android.support:appcompat-v7:23.1.1'
     compile project(':ln')
 }
