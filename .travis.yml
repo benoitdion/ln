@@ -2,8 +2,9 @@ language: android
 
 android:
   components:
-    - platform-tools
     - tools
+    - tools  # 2x tools to make sure the latest version gets installed.
+    - platform-tools
     - build-tools-24.0.1
     - android-24
     - extra-android-support
@@ -14,3 +15,6 @@ jdk:
 
 script:
   - ./gradlew clean check
+
+after_failure:
+  - "cat /home/travis/build/benoitdion/ln/ln/build/outputs/lint-results-debug.xml"
